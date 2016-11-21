@@ -33,14 +33,10 @@ public class NumbersActivity extends AppCompatActivity {
 
         LinearLayout rootView = (LinearLayout) findViewById(R.id.root_view);
 
-        int index = 0;
-
-        while (index < words.size()) {
+        for (int i = 0; i < words.size(); i++) {
             TextView wordView = new TextView(this);
-            wordView.setText(words.get(index));
+            wordView.setText(words.get(i));
             rootView.addView(wordView);
-
-            index++;
         }
     }
 }
