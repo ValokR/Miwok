@@ -3,10 +3,13 @@ package com.example.android.miwok;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import static com.example.android.miwok.R.id.numbers;
+import static com.example.android.miwok.R.id.root_view;
 
 public class NumbersActivity extends AppCompatActivity {
 
@@ -28,7 +31,16 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("nine");
         words.add("ten");
 
-        Log.v("NumbersActivity", "Array index 0 contains " + words.get(0));
-        Log.v("NumbersActivity", "Array index 1 contains " + words.get(1));
+        LinearLayout rootView = (LinearLayout) findViewById(R.id.root_view);
+
+        int index = 0;
+
+        while (index < words.size()) {
+            TextView wordView = new TextView(this);
+            wordView.setText(words.get(index));
+            rootView.addView(wordView);
+
+            index++;
+        }
     }
 }
